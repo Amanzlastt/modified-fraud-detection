@@ -36,7 +36,7 @@ class featureEngineering:
         self.data['device_id_encoded'] = self.data['device_id'].map(device_id_freq)
         self.data['country'].fillna('undefined', inplace=True)
         self.data['time_diff(hr)'].fillna(0, inplace=True)
-        choosen_features = ['user_id','purchase_value', 'source','browser','sex','age','ip_address','country','day_of_week','time_diff(hr)','class']
+        choosen_features = ['user_id','purchase_value', 'source','browser','sex','age','ip_address','country','day_of_week','time_diff(hr)']
         df_final = self.data[choosen_features]
 
         return df_final

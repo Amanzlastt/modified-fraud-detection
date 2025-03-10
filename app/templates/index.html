@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Fraud Detection Form</h2>
+        <form method="post">
+            <label>User_id:</label>
+            <input type="number" name="user_id" required>
+
+            <div class='input_lables'>
+                <label>signup_time:</label>
+                <input type="datetime-local" name="signup_time" required>
+
+                <label>Purchase_time:</label>
+                <input type="datetime-local" name="purchase_time" required>
+            </div>
+            <div>
+                <label>purchase_value:</label>
+                <input type="number" name="purchase_value" required>
+
+                <label>Device_id:</label>
+                <input type="text" name="device_id" required>
+            </div>
+            <div>
+                <label>Souurce:</label>
+                <input type="text" name="source" required>
+
+                <label>Browser:</label>
+                <input type="text" name="browser" required>
+            </div>
+            <div>
+                <label>Sex:</label>
+                <input type="text" name="sex" required>
+
+                <label>Country:</label>
+                <input type="text" name="country" required>
+
+                <label>Age:</label>
+                <input type="number" name="age" required>
+
+                <label>IP:</label>
+                <input type="number" name="ip_address" required>
+            </div>        
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction is not none %}
+        <h3>Prediction Result: 
+            <span class="result">
+                {{ "Fraudulent" if prediction >0.5 else "Not Fraudulent" }}
+            </span>
+        </h3>
+        {% endif %}
+
+        <!-- {{prediction_text}} -->
+    </div>
+</body>
+</html>
