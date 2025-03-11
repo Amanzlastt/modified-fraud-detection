@@ -13,11 +13,11 @@ sys.path.append(os.path.abspath(path=path))
 from feature_engineering import featureEngineering
 
 # Load the trained model
-with open("C:\\Users\\Aman\\Desktop\\MODIFIED-FRAUD-DETECTION\\data\\preprocessed\\preprocessor.joblib", "rb") as file:
+with open("preprocessor.joblib", "rb") as file:
     preprocessor = joblib.load(file)
 
 # Load scaler
-with open("C:\\Users\\Aman\\Desktop\\MODIFIED-FRAUD-DETECTION\\data\\model\\mlps.joblib", "rb") as file:
+with open("mlps.joblib", "rb") as file:
     model = joblib.load(file)
 
 # 'user_id','purchase_value', 'age', 'time_diff(hr)','day_of_week', 'ip_address','browser','source', 'country'
@@ -83,6 +83,5 @@ if __name__ == "__main__":
 
 # if __name__ == "__main__":
 #     app.run(host="0.0.0.0", port=5000, debug=True)
-
 
 
